@@ -9,7 +9,15 @@ var testeRouter = require('./routes/teste'); // teste
 
 //MongoDB
 const db = require('./config/database')
-//bd('mongodb+srv://Douglas:<password>@cluster0.ryd2z.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority')
+
+// Variaveis de segurança para o DB
+const dbUser = process.env.DB_USER
+const dbPass = process.env.DB_PASS
+const dbName = process.env.DB_NAME
+
+//Para conectar o MongoDB 
+db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.ryd2z.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
+
 var app = express();
 
 app.use(logger('dev'));
