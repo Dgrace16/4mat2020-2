@@ -7,8 +7,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testeRouter = require('./routes/teste'); // teste
 
-//MongoDB
+//Rota para MongoDB
 const db = require('./config/database')
+//Rota para curso 
+const curso = require('./routes/curso')
 
 // Variaveis de segurança para o DB
 const dbUser = process.env.DB_USER
@@ -31,5 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/teste', testeRouter); //Teste 
+app.use('/curso', curso); // Curso
 
 module.exports = app;
