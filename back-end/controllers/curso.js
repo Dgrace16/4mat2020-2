@@ -59,7 +59,7 @@ controller.listar = async (req, res) => {
 
     } catch (erro) {
         console.error(erro)
-        //HTTp 500: Internal Server Error
+        //HTTP 500: Internal Server Error
         res.status(500).send(erro)
     }
 }
@@ -78,4 +78,44 @@ controller.obterUm = async (req, res) => {
     // Se não (objeto vario), enviamos o status HTTP 404: Not found
     else res.status(404).end()
 }
+
+// Método atualizar(), implementando a operação UPDATE
+controller.atualizar = async (req, res) => {
+    try {
+        // Isolar o _id do objeto para fins de busca
+        const id = req.body._id
+        // Busca o objeto pelo id e, encontrado-o, subistitui o conteudo por req.body
+        let obj = await Curso.findByIdAndUpdate(id, req.body)
+
+        // Se encontar e substituiu, retornando HTTP 204: No content
+        if (obj) res.status(204).end()
+        // Caso contrário, retorna HTTP 404: Not found 
+        else res.status(404).end()
+    } catch (erro) {
+        console.error(erro)
+        //HTTP 500: Internal Server Error
+        res.status(500).send(erro)
+    }
+}
+
+// Método excluir(), implementando a operação DELETE
+controller.excluir = async (req, res) => {
+    try {
+        // Isolar o _id para exclusão
+        const id = req.body._id
+        // Um metodo mais seguro do que passar pela URL
+        let obj = await Curso.findByIdAndDelete(id)
+
+        // Se encontar e excluir, retornando HTTP 204: No content
+        if (obj) res.status(204).end()
+        // Caso não encontre, retorna HTTP 404: Not found 
+        else res.status(404).end()
+    } catch (erro) {
+        console.error(erro)
+        //HTTP 500: Internal Server Error
+        res.status(500).send(erro)
+    }
+}
+
+//Exportador do controller
 module.exports = controller

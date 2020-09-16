@@ -8,7 +8,7 @@ module.exports = uri => {
 
     mongoose.connection.on('connected', () =>
         console.log('==> Mongoose! Conectado com susseso ao servidor'),
-        console.log('MONGOOSE aqui, To na atividade')
+        console.log('MONGOOSE aqui, To na atividade!')
     )
 }
 // captura um sinal de enceramento (sigint), CTRL+C
@@ -20,6 +20,7 @@ process.on('SIGINT', () =>
         process.exit(0);
     })
 )
+
 // captura um sinal de enceramento por erro
 mongoose.connection.on('disconnected', () => {
     console.log('===> Mongoose! Desconectado do servidor');
