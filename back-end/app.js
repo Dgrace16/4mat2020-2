@@ -7,17 +7,21 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testeRouter = require('./routes/teste'); // teste
 
-//Rota para MongoDB
+// Rota para MongoDB
 const db = require('./config/database')
-//Rota para curso 
+// Rota para curso 
 const curso = require('./routes/curso')
+// Rota para professor
+const professor = require('./routes/professor')
+// Rota para sala_aula 
+const sala_aula = require('./routes/sala_aula')
 
 // Variaveis de segurança para o DB
 const dbUser = process.env.DB_USER
 const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
 
-//Para conectar o MongoDB 
+// Para conectar o MongoDB 
 db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.ryd2z.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
 var app = express();
@@ -34,5 +38,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/teste', testeRouter); //Teste 
 app.use('/curso', curso); // Curso
+app.use('/professor', professor); // professor
+app.use('/sala-aula', sala_aula); // sala_aula
 
 module.exports = app;

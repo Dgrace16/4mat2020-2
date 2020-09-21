@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 module.exports = uri => {
     mongoose.connect(uri, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndexes: true
     })
 
     mongoose.connection.on('connected', () =>
@@ -14,7 +15,7 @@ module.exports = uri => {
 // captura um sinal de enceramento (sigint), CTRL+C
 process.on('SIGINT', () =>
     mongoose.connection.close(() => {
-        console.log('===> Mongoose! Desconectado pelo terminalda aplicação');
+        console.log('===> Mongoose! Desconectado pelo terminal da aplicação');
         console.log('Disgramado');
         // 0 indica que a finalização ocorreu sem erros 
         process.exit(0);

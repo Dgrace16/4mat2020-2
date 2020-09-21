@@ -10,7 +10,7 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         required: true, // atibuto obrigatorio
         min: 4, // minimo de horas
         max: 240, // maximo de horas 
-        default: 100 // caso eu nn Coloque valor como padrão será 100
+        default: 100 // caso eu não Coloque valor como padrão será 100
     },
     nivel: {
         type: String, // tipo String e sem limitação 
