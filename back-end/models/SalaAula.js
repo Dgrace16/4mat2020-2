@@ -2,18 +2,19 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({ // Schema é um esquema 
     nome: {
-        type: String,
-        required: true
+        type: String, // tipo String e sem limitação
+        required: true // atibuto obrigatorio
     },
     capacidade: {
         type: Number,
-        min: 5,
-        max: 30,
-        default: 15,
-        required: true
+        min: 5, // minimo de alunos 5
+        max: 30, // maximo de alunos 30
+        default: 15, // caso eu não Coloque valor como padrão será 15
+        required: true // atibuto obrigatorio
     },
     recursos_didaticos: {
-        type: String
+        type: String // tipo String e sem limitação
+        // atibuto não obrigatorio
     }
 })
 

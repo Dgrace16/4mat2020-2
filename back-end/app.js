@@ -15,6 +15,8 @@ const curso = require('./routes/curso')
 const professor = require('./routes/professor')
 // Rota para sala_aula 
 const sala_aula = require('./routes/sala_aula')
+// Rota para turma
+const turma = require('./routes/turma')
 
 // Variaveis de segurança para o DB
 const dbUser = process.env.DB_USER
@@ -40,5 +42,6 @@ app.use('/teste', testeRouter); //Teste
 app.use('/curso', curso); // Curso
 app.use('/professor', professor); // professor
 app.use('/sala-aula', sala_aula); // sala_aula
+app.use('/turma', turma); // turma
 
 module.exports = app;

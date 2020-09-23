@@ -10,13 +10,13 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         required: true // atibuto obrigatorio
     },
     data_nascimento: {
-        type: Date, // tipo Data DD/MM/AAAA
+        type: Date, // tipo Data AAAA/MM/DD
         required: true // atibuto obrigatorio
     },
     cpf: {
         type: String, // tipo String e sem limitação 
         index: {
-            unique: true // so pode ter um unico 
+            unique: true // so pode ter" um unico 
         },
         required: true // atibuto obrigatorio
     },
