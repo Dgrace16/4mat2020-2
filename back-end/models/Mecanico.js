@@ -28,6 +28,10 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         type: String, // tipo String e sem limitação
         required: true // atibuto obrigatorio
     },
+    funcao: { // função que o Mecanico atua
+        type: String, // tipo String e sem limitação
+        required: true // atibuto obrigatorio
+    },
     email: {
         type: String, // tipo String e sem limitação 
         index: {
@@ -44,4 +48,4 @@ const esquema = mongoose.Schema({ // Schema é um esquema
 // 3º -> o nome da COLEÇÃO no BD que irá receber os objetos que serão
 //       criados a partir deste model (inicial minúscula, plural do
 //       nome do model)
-module.exports = mongoose.model('Cliente', esquema, 'cliente')
+module.exports = mongoose.model('Mecanico', esquema, 'mecanico')
