@@ -2,14 +2,24 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({ // Schema é um esquema 
     horario_inicial: {
-        type: Number, // tipo Number e sem limitação 
+        type: String, // tipo String e sem limitação 
         required: true // atributo obrigatório
     },
     horario_termino: {
-        type: Number, // tipo Number e sem limitação
+        type: String, // tipo Number e sem limitação
         required: true // atributo obrigatório
     },
-   
+    peca: {
+        type: mongoose.ObjectId,
+        ref: 'Peca', // para puxar peca do mongoose
+        required: false // atributo nao obrigatorio
+    },
+    mecanico: {
+        type: mongoose.ObjectId,
+        ref: 'Mecanico', // para puxar mecanico do mongoose
+        required: true // atributo obrigatorio
+    }
+
 })
 
 // PARÂMETROS DO mongoose.model()

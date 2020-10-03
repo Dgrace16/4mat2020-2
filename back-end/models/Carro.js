@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({ // Schema é um esquema 
     placa: {
         type: String, // tipo String 
-        index:{
-          unique: true // É um dado único 
+        index: {
+            unique: true // É um dado único 
         },
         required: true // atributo obrigatório
     },
@@ -28,6 +28,16 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         type: String, // tipo String e sem limitação
         required: true // atributo obrigatório
     },
+    cliente: {
+        type: mongoose.ObjectId,
+        relf: 'Cliente', // para puxar cliente do mongoose
+        required: true // atributo obrigatorio
+    },
+    manutencao: {
+        type: mongoose.ObjectId,
+        relf: 'Manutenção', // para puxar manutenção do mongoose
+        required: true // atributo obrigatorio
+    }
 
 })
 
