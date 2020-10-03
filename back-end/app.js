@@ -23,6 +23,10 @@ const cliente = require('./routes/cliente')
 const mecanico = require('./routes/mecanico')
 // Rota para peca
 const peca = require('./routes/peca')
+// Rota para manutenção
+const manutencao = require('./routes/manutencao')
+// Rota para carro
+const carro = require('./routes/carro')
 
 // Variaveis de segurança para o DB
 const dbUser = process.env.DB_USER
@@ -52,5 +56,8 @@ app.use('/turma', turma); // turma
 app.use('/cliente', cliente); // cliente
 app.use('/mecanico', mecanico); // mecanico
 app.use('/peca', peca); // peca
+app.use('/carro', carro); // carro
+app.use('/manutencao', manutencao); // manutencao
+
 
 module.exports = app;
