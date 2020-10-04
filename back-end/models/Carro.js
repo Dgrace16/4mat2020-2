@@ -30,12 +30,12 @@ const esquema = mongoose.Schema({ // Schema é um esquema
     },
     cliente: {
         type: mongoose.ObjectId,
-        relf: 'Cliente', // para puxar cliente do mongoose
+        relf: 'cliente', // para puxar cliente do mongoose
         required: true // atributo obrigatorio
     },
     manutencao: {
         type: mongoose.ObjectId,
-        relf: 'Manutenção', // para puxar manutenção do mongoose
+        relf: 'manutencao', // para puxar manutenção do mongoose
         required: true // atributo obrigatorio
     }
 
