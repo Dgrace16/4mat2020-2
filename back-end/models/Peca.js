@@ -11,8 +11,8 @@ const esquema = mongoose.Schema({ // Schema é um esquema
     },
     valor: {
         type: Number, // tipo String e sem limitação 
-        min: 0.00, // Valor minimo sera de 0 ????????? talvez nao tenha como ser menos Questionar professor 
-        default: null, // caso valor não seja escolhido sera conseidderado sem valor ?????? questionar se null pode ser utilizado
+        min: 0.00, // Valor minimo sera de 0 
+        default: 0.00, // valor Atribuido caso não seja informado 
         required: true // atibuto obrigator
 
     }
