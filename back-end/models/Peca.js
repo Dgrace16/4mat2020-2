@@ -14,7 +14,14 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         min: 0.00, // Valor minimo sera de 0 
         default: 0.00, // valor Atribuido caso não seja informado 
         required: true // atibuto obrigator
-
+    },
+    marca_carro: {
+        type: String,
+        required: true
+    },
+    descricao: {
+        type: String, // tipo String e sem limitação 
+        required: true // atibuto obrigator
     }
 
 })

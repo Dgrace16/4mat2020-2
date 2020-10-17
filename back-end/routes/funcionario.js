@@ -1,4 +1,4 @@
-const controller = require('../controllers/mecanico')
+const controller = require('../controllers/funcionario')
 const express = require('express')
 
 const router = express.Router()

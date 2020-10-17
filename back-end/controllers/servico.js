@@ -26,7 +26,7 @@
 */
 
 // Importar o model para dentro do controler
-const Professor = require('../models/Professor')
+const Servico = require('../models/Servico')
 
 const controller = {} // Objeto vazio 
 
@@ -37,7 +37,7 @@ controller.novo = async (req, res) => {
 
     try {
         // envia os dados  dentro de req.body para o BD para criação 
-        await Professor.create(req.body)
+        await Servico.create(req.body)
         //HTTP 201: Created
         res.status(201).end()
     } catch (erro) {
@@ -50,10 +50,12 @@ controller.novo = async (req, res) => {
 // Método listar(), implementando a operação RETRIEVE(all) todos
 controller.listar = async (req, res) => {
     // req = requisisão  res = resposta
-    // find() sem parêametros é para trazer tudo(do PROFESSOR) do banco de dados
+    // find() sem parêametros é para trazer tudo(do Cliente) do banco de dados
     // async e await SEMPRE estao juntas, siginifica que é assíncrona
     try {
-        let dados = await Professor.find()
+        let dados = await Servico.find()
+            .populate("cliente", "nome")
+            .populate("manutencao")
         res.send(dados)
         // Ele retorna res.status(200) : OK
 
@@ -67,11 +69,11 @@ controller.listar = async (req, res) => {
 // Método obtenUm(), implementando a operação RETRIEVE(one) um
 controller.obterUm = async (req, res) => {
     // req = requisisão  res = resposta
-    // find() sem parêametros é para trazer tudo(do CURSO) do banco de dados
+    // find() sem parêametros é para trazer tudo(do Cliente) do banco de dados
     // async e await SEMPRE estao juntas, siginifica que é assíncrona
 
     const id = req.params.id // Capturando o parametro Id
-    let obj = await Professor.findById(id)
+    let obj = await Servico.findById(id)
 
     // Se o objeto vier preenchido (achou), entao retorne
     if (obj) res.send(obj);
@@ -85,7 +87,7 @@ controller.atualizar = async (req, res) => {
         // Isolar o _id do objeto para fins de busca
         const id = req.body._id
         // Busca o objeto pelo id e, encontrado-o, subistitui o conteudo por req.body
-        let obj = await Professor.findByIdAndUpdate(id, req.body)
+        let obj = await Servico.findByIdAndUpdate(id, req.body)
 
         // Se encontar e substituiu, retornando HTTP 204: No content
         if (obj) res.status(204).end()
@@ -104,7 +106,7 @@ controller.excluir = async (req, res) => {
         // Isolar o _id para exclusão
         const id = req.body._id
         // Um metodo mais seguro do que passar pela URL
-        let obj = await Professor.findByIdAndDelete(id)
+        let obj = await Servico.findByIdAndDelete(id)
 
         // Se encontar e excluir, retornando HTTP 204: No content
         if (obj) res.status(204).end()

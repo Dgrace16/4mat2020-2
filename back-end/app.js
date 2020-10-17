@@ -9,24 +9,18 @@ var testeRouter = require('./routes/teste'); // teste
 
 // Rota para MongoDB
 const db = require('./config/database')
-// Rota para curso 
-const curso = require('./routes/curso')
-// Rota para professor
-const professor = require('./routes/professor')
-// Rota para sala_aula 
-const sala_aula = require('./routes/sala_aula')
-// Rota para turma
-const turma = require('./routes/turma')
 // Rota para cliente
 const cliente = require('./routes/cliente')
-// Rota para mecanico
-const mecanico = require('./routes/mecanico')
+// Rota para funcionario
+const funcionario = require('./routes/funcionario')
 // Rota para peca
 const peca = require('./routes/peca')
 // Rota para manutenção
 const manutencao = require('./routes/manutencao')
 // Rota para carro
 const carro = require('./routes/carro')
+// Rota para servico
+const servico = require('./routes/servico')
 
 // Variaveis de segurança para o DB
 const dbUser = process.env.DB_USER
@@ -49,15 +43,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/teste', testeRouter); //Teste 
-app.use('/curso', curso); // Curso
-app.use('/professor', professor); // professor
-app.use('/sala-aula', sala_aula); // sala_aula
-app.use('/turma', turma); // turma
 app.use('/cliente', cliente); // cliente
-app.use('/mecanico', mecanico); // mecanico
+app.use('/funcionario', funcionario); // funcionario
 app.use('/peca', peca); // peca
 app.use('/carro', carro); // carro
 app.use('/manutencao', manutencao); // manutencao
-
+app.use('/servico', servico); // servico
 
 module.exports = app;
