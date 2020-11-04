@@ -9,19 +9,23 @@ import { MaterialModule } from './material/material.module';
 import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CarroListComponent } from './carro/carro-list/carro-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainToolbarComponent,
     MainMenuComponent,
-    MainFooterComponent
+    MainFooterComponent,
+    CarroListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
