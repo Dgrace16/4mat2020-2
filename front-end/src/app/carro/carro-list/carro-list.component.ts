@@ -10,6 +10,8 @@ export class CarroListComponent implements OnInit {
 
     carros : any = [] // Vetor vazio
 
+    displayedColumns: string[] = ['placa', 'marca', 'modelo', 'ano', 'cor' ,'interior' ,'cliente']
+
   constructor(private carroSrv: CarroService) { }
 
  async ngOnInit() {

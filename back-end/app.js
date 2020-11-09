@@ -32,6 +32,10 @@ db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.ryd2z.gcp.mongodb.net/${dbName}?r
 
 var app = express();
 
+// cors
+const cors = require('cors');
+app.use(cors()); // cors
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
@@ -49,5 +53,7 @@ app.use('/peca', peca); // peca
 app.use('/carro', carro); // carro
 app.use('/manutencao', manutencao); // manutencao
 app.use('/servico', servico); // servico
+
+
 
 module.exports = app;
