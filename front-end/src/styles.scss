@@ -11,5 +11,36 @@ body {
 }
 
 div.content {
-    margin-bottom: 40px;
+    //ordem das margens: topo direita embaixo esquerda (Sentiso horário)
+    margin: 40px 40px 80px 40px;
+}
+
+.mat-table {
+    width: 100%;
+}
+
+//Desaparece com os botões editar e excluir das tabelas de listagem
+.mat-row .mat-raised-button {
+    visibility: hidden;
+}
+
+//Reexibe os botões na linha sob o cursor do mouse
+.mat-row:hover .mat-raised-button {
+    visibility: visible;
+}
+
+//Coloca um leve destaque na linha sob o mouse 
+.mat-row:hover {
+    filter: brightness(85%);
+}
+
+.new-item {
+    background-color: transparent;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: center;
+
+    a {
+        font-size: 110%;
+    }
 }

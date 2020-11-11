@@ -11,6 +11,7 @@ import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarroListComponent } from './carro/carro-list/carro-list.component';
+import { CarroFormComponent } from './carro/carro-form/carro-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CarroListComponent } from './carro/carro-list/carro-list.component';
     MainToolbarComponent,
     MainMenuComponent,
     MainFooterComponent,
-    CarroListComponent
+    CarroListComponent,
+    CarroFormComponent
   ],
   imports: [
     BrowserModule,
