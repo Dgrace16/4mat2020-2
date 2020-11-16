@@ -13,11 +13,13 @@ export class CarroFormComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
     
-  }
-salvar(form){
+    }
+     salvar(form){
 
-}
+  
+    }
+
 }
