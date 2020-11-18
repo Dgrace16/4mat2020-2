@@ -36,4 +36,14 @@
         <input name="cliente" [(ngModel)]="carro.cliente" matInput required placeholder="Identifique o dono do carro (Ex: Valdysnei)">
     </mat-form-field> -->
 
+    <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
+                Salvar
+            </button>
+            <button mat-raised-button type="button" (click)="voltar(f)">
+                Voltar
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </form>
