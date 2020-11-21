@@ -1,0 +1,81 @@
+<mat-toolbar class="new-item">
+    <a mat-raised-button color="accent" [routerLink]="['/funcionario/novo']">
+        <mat-icon>add_circle</mat-icon>
+        Novo cadastro
+    </a>
+</mat-toolbar>
+
+<table mat-table [dataSource]="funcionarios" class="mat-elevation-z5">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- nome Coluna -->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.nome}} </td>
+    </ng-container>
+
+    <!-- data nascimento Coluna -->
+    <ng-container matColumnDef="data_nascimento">
+        <th mat-header-cell *matHeaderCellDef> Data nascimento </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.data_nascimento}} </td>
+    </ng-container>
+
+    <!-- cpf Coluna -->
+    <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> CPF </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.cpf}} </td>
+    </ng-container>
+
+    <!-- rg Coluna -->
+    <ng-container matColumnDef="rg">
+        <th mat-header-cell *matHeaderCellDef> RG </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.rg}} </td>
+    </ng-container>
+
+    <!-- endereco Coluna -->
+    <ng-container matColumnDef="endereco">
+        <th mat-header-cell *matHeaderCellDef> Endereco </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.endereco}} </td>
+    </ng-container>
+
+    <!-- telefone Coluna -->
+    <ng-container matColumnDef="telefone">
+        <th mat-header-cell *matHeaderCellDef> Telefone </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.telefone}} </td>
+    </ng-container>
+
+    <!-- funcao Coluna -->
+    <ng-container matColumnDef="funcao">
+        <th mat-header-cell *matHeaderCellDef> funcão </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.funcao}} </td>
+    </ng-container>
+
+    <!-- email Coluna -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+        <td mat-cell *matCellDef="let funcionario"> {{funcionario.email}} </td>
+    </ng-container>
+
+    <!-- Editar Column -->
+    <ng-container matColumnDef="editar">
+        <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Editar</th>
+        <td mat-cell class="cell-align-center" *matCellDef="let funcionario"><a mat-raised-button color="accent" title="Editar" [routerLink]="['/funcionario', funcionario._id]">
+                <mat-icon>edit</mat-icon>
+            </a></td>
+        <!-- Excluir Column -->
+    </ng-container>
+    <ng-container matColumnDef="excluir">
+        <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Excluir</th>
+        <td mat-cell class="cell-align-center" *matCellDef="let funcionario"><button mat-raised-button color="warn" title="Excluir" (click)="excluir(funcionario._id)">
+                <mat-icon>delete_forever</mat-icon>
+            </button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+
+    <tr mat-row *matRowDef="let funcionario; columns: displayedColumns;"></tr>
+
+</table>

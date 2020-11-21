@@ -50,12 +50,13 @@ controller.novo = async (req, res) => {
 // Método listar(), implementando a operação RETRIEVE(all) todos
 controller.listar = async (req, res) => {
     // req = requisisão  res = resposta
-    // find() sem parêametros é para trazer tudo(do Cliente) do banco de dados
+    // find() sem parêametros é para trazer tudo(do Servico) do banco de dados
     // async e await SEMPRE estao juntas, siginifica que é assíncrona
     try {
         let dados = await Servico.find()
-            .populate("cliente", "nome")
-            .populate("manutencao")
+            .populate("carro", "placa")
+            .populate("peca", "nome")
+            .populate("peca", "valor")
         res.send(dados)
         // Ele retorna res.status(200) : OK
 
@@ -69,7 +70,7 @@ controller.listar = async (req, res) => {
 // Método obtenUm(), implementando a operação RETRIEVE(one) um
 controller.obterUm = async (req, res) => {
     // req = requisisão  res = resposta
-    // find() sem parêametros é para trazer tudo(do Cliente) do banco de dados
+    // find() sem parêametros é para trazer tudo(do Servico) do banco de dados
     // async e await SEMPRE estao juntas, siginifica que é assíncrona
 
     const id = req.params.id // Capturando o parametro Id

@@ -2,22 +2,23 @@
     <mat-icon>menu</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <a [routerLink]="['/cliente']" mat-menu-item>
         <mat-icon> account_box </mat-icon>Cliente
-    </button>
+    </a>
     <a [routerLink]="['/carro']" mat-menu-item>
         <mat-icon> directions_car </mat-icon>Carro
     </a>
-    <button mat-menu-item>
+    <a [routerLink]="['/peca']" mat-menu-item>
         <mat-icon> build </mat-icon>Peças
-    </button>
-    <button mat-menu-item>
+    </a>
+    <a [routerLink]="['/funcionario']" mat-menu-item>
         <mat-icon> engineering </mat-icon>Funcionários
-    </button>
-    <button mat-menu-item>
+    </a>
+    <a [routerLink]="['/manutencao']" mat-menu-item>
+        <mat-icon> handyman </mat-icon>manutencao
+    </a>
+    <a [routerLink]="['/servico']" mat-menu-item>
         <mat-icon> receipt </mat-icon>Serviço
-    </button>
-    <button mat-menu-item>
-        <mat-icon> group </mat-icon>Quem somos
-    </button>
+    </a>
+
 </mat-menu>
