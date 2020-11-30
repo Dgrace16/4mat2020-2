@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CarroService } from '../carro.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -8,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./carro-list.component.scss']
 })
 export class CarroListComponent implements OnInit {
+
+    title : string = "Novo Carro"
 
     carros : any = [] // Vetor vazio
 

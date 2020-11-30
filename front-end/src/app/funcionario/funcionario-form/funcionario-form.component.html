@@ -1,1 +1,62 @@
-<p>funcionario-form works!</p>
+ <h1>{{ title }}</h1>
+
+ <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+     <mat-form-field>
+         <mat-label>Nome do funcionario</mat-label>
+         <input name="nome" [(ngModel)]="funcionario.nome" matInput required placeholder="Identifique o nome do funcionario (Ex: Fulano da Silva)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Data de nascimento </mat-label>
+         <input matInput [matDatepicker]="data_nascimento" [(ngModel)]="funcionario.data_nascimento" name="data_nascimento">
+         <mat-datepicker-toggle matSuffix [for]="data_nascimento"></mat-datepicker-toggle>
+         <mat-datepicker #data_nascimento></mat-datepicker>
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>CPF do funcionario</mat-label>
+         <input name="cpf" [(ngModel)]="funcionario.cpf" matInput required placeholder="Identifique o CPF do funcionario (Ex: XXX.XXX.XXX-XX)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>RG do funcionario</mat-label>
+         <input name="rg" [(ngModel)]="funcionario.rg" matInput required placeholder="Identifique o RG do funcionario (Ex: 50.XXX.XXX-X)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Endereco do funcionario</mat-label>
+         <input name="endereco" [(ngModel)]="funcionario.endereco" matInput required placeholder="Identifique o endereco do funcionario (Ex: Rua Abilio Coltinho N.630 São Joaquim)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Telefone do funcionario</mat-label>
+         <input name="telefone" [(ngModel)]="funcionario.telefone" matInput required placeholder="Identifique o telefone do funcionario (Ex: +55(DDD)37XX-XXXX)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>função/funções</mat-label>
+         <mat-select name="funcao" [(ngModel)]="funcionario.funcao" multiple>
+             <mat-option *ngFor="let funcao of funcoes" [value]="funcao.val">
+                 {{funcao.descr}}
+             </mat-option>
+         </mat-select>
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Email do funcionario</mat-label>
+         <input name="email" [(ngModel)]="funcionario.email" matInput required placeholder="Identifique o e-mail do funcionario (Ex: fulano@email.com)">
+     </mat-form-field>
+
+     <mat-toolbar class="form-buttons">
+         <mat-toolbar-row>
+             <button mat-raised-button type="submit" color="accent">
+                 Salvar
+             </button>
+             <button mat-raised-button type="button" (click)="voltar(f)">
+                 Voltar
+             </button>
+         </mat-toolbar-row>
+     </mat-toolbar>
+
+ </form>

@@ -19,13 +19,13 @@
     <!-- manutencao Coluna -->
     <ng-container matColumnDef="manutencao">
         <th mat-header-cell *matHeaderCellDef> Manutencao </th>
-        <td mat-cell *matCellDef="let servico"> {{servico.manutencao}} </td>
+        <td mat-cell *matCellDef="let servico"> {{servico.manutencao?.horario_inicial | date : 'dd/MM/yyyy'}} &mdash; {{servico.manutencao?.horario_termino | date : 'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <!-- peca Coluna -->
     <ng-container matColumnDef="peca">
         <th mat-header-cell *matHeaderCellDef> Peca </th>
-        <td mat-cell *matCellDef="let servico"> {{servico.peca.nome}} -- {{servico.peca.valor}} </td>
+        <td mat-cell *matCellDef="let servico"> {{servico.peca?.nome}} --- {{servico.peca?.valor}} </td>
     </ng-container>
 
     <!-- Editar Column -->

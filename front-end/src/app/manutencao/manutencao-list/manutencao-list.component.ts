@@ -7,7 +7,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './manutencao-list.component.html',
   styleUrls: ['./manutencao-list.component.scss']
 })
+
 export class ManutencaoListComponent implements OnInit {
+
+    title : string = "Nova Manutenção"
 
     manutencoes : any = [] // vetor vazio
     

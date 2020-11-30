@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PecaListComponent implements OnInit {
 
+    title : string = "Nova Peca"
+
     pecas : any = []  // vetor vazio
     
     displayedColumns: string[] = ['nome','fabricante','valor', 'marca_carro', 'descricao', 'editar','excluir']  

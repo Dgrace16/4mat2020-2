@@ -1,1 +1,53 @@
-<p>cliente-form works!</p>
+ <h1>{{ title }}</h1>
+
+ <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+     <mat-form-field>
+         <mat-label>Nome do cliente</mat-label>
+         <input name="nome" [(ngModel)]="cliente.nome" matInput required placeholder="Identifique o nome do cliente (Ex: Luiz Henrique Neto)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Data de nascimento </mat-label>
+         <input matInput [matDatepicker]="data_nascimento" [(ngModel)]="cliente.data_nascimento" name="data_nascimento">
+         <mat-datepicker-toggle matSuffix [for]="data_nascimento"></mat-datepicker-toggle>
+         <mat-datepicker #data_nascimento></mat-datepicker>
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>CPF do cliente</mat-label>
+         <input name="cpf" [(ngModel)]="cliente.cpf" matInput required placeholder="Identifique o CPF do cliente (Ex: XXX.XXX.XXX-XX)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>RG do cliente</mat-label>
+         <input name="rg" [(ngModel)]="cliente.rg" matInput required placeholder="Identifique o RG do cliente (Ex: 62.XXX.XXX-X)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Endereco do cliente</mat-label>
+         <input name="endereco" [(ngModel)]="cliente.endereco" matInput required placeholder="Identifique o endereco do cliente (Ex: Rua Abilio Coltinho N.640 São Joaquim)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Telefone do cliente</mat-label>
+         <input name="telefone" [(ngModel)]="cliente.telefone" matInput required placeholder="Identifique o telefone do cliente (Ex: +55(DDD)37XX-XXXX)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Email do cliente</mat-label>
+         <input name="email" [(ngModel)]="cliente.email" matInput required placeholder="Identifique o e-mail do cliente (Ex: Luizaohn@email.com)">
+     </mat-form-field>
+
+     <mat-toolbar class="form-buttons">
+         <mat-toolbar-row>
+             <button mat-raised-button type="submit" color="accent">
+                 Salvar
+             </button>
+             <button mat-raised-button type="button" (click)="voltar(f)">
+                 Voltar
+             </button>
+         </mat-toolbar-row>
+     </mat-toolbar>
+
+ </form>

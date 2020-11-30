@@ -3,43 +3,45 @@ import { ClienteService } from '../cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-cliente-list',
-  templateUrl: './cliente-list.component.html',
-  styleUrls: ['./cliente-list.component.scss']
+    selector: 'app-cliente-list',
+    templateUrl: './cliente-list.component.html',
+    styleUrls: ['./cliente-list.component.scss']
 })
 export class ClienteListComponent implements OnInit {
 
-    clientes : any = [] // vetor vazio
+    title: string = "Novo Cliente"
 
-    displayedColumns: string[] = ['nome','data_nascimento','cpf','rg','endereco','telefone','email','editar','excluir']  
+    clientes: any = [] // vetor vazio
 
-  constructor(
-      private clienteSrv : ClienteService,
-      private snaskBar: MatSnackBar
-      ) { }
+    displayedColumns: string[] = ['nome', 'data_nascimento', 'cpf', 'rg', 'endereco', 'telefone', 'email', 'editar', 'excluir']
 
-  async ngOnInit() {
-    this.clientes = await this.clienteSrv.listar()
-    console.table(this.clientes)
-  }
- async excluir(id : string){
-      if(confirm(`deseja realmente excluir este item?\n O item será excluido permanetimente`)){
-          try {
-              // 1) Efetuar a exclusão 
-              await this.clienteSrv.excluir(id)
-              // 2)Atualizar os dados da tabela
-              this.ngOnInit()
-              // 3) Dar um feedback para o usuário
-            this.snaskBar.open('item excluido com sucesso.','entendi',{
-            duration: 5000 //5 segundos
-            })
-          } catch(erro) {
-              console.error(erro)
-              //4) Dar um feedback de erro para o usuário
-              this.snaskBar.open('ERRO: Não foi possivel excluir este item.','ALGUEM VACILO',{
-                  duration:5000 //SEgundos
-              })
-          }
-      }
- }
+    constructor(
+        private clienteSrv: ClienteService,
+        private snaskBar: MatSnackBar
+    ) { }
+
+    async ngOnInit() {
+        this.clientes = await this.clienteSrv.listar()
+        console.table(this.clientes)
+    }
+    async excluir(id: string) {
+        if (confirm(`deseja realmente excluir este item?\n O item será excluido permanetimente`)) {
+            try {
+                // 1) Efetuar a exclusão 
+                await this.clienteSrv.excluir(id)
+                // 2)Atualizar os dados da tabela
+                this.ngOnInit()
+                // 3) Dar um feedback para o usuário
+                this.snaskBar.open('item excluido com sucesso.', 'entendi', {
+                    duration: 5000 //5 segundos
+                })
+            } catch (erro) {
+                console.error(erro)
+                //4) Dar um feedback de erro para o usuário
+                this.snaskBar.open('ERRO: Não foi possivel excluir este item.', 'ALGUEM VACILO', {
+                    duration: 5000 //SEgundos
+                })
+            }
+        }
+    }
 }

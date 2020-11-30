@@ -1,9 +1,10 @@
 <h1>{{ title }}</h1>
 
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
     <mat-form-field>
         <mat-label>Placa do carro</mat-label>
-        <input name="placa" [(ngModel)]="carro.placa" matInput required placeholder="Identifique a placa do carro (Ex: Flu-7799)">
+        <input name="placa" [(ngModel)]="carro.placa" matInput required placeholder="Identifique a placa do carro (Ex: Flu-7799)" mask="AAA-0000" [dropSpecialCharacters]="false">
     </mat-form-field>
 
     <mat-form-field>
@@ -31,10 +32,12 @@
         <input name="interior" [(ngModel)]="carro.interior" matInput required placeholder="Identifique o interior do carro (Ex: Couro)">
     </mat-form-field>
 
-    <!-- <mat-form-field>
-        <mat-label>Dono do carro</mat-label>
-        <input name="cliente" [(ngModel)]="carro.cliente" matInput required placeholder="Identifique o dono do carro (Ex: Valdysnei)">
-    </mat-form-field> -->
+    <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <mat-select name="cliente" [(ngModel)]="carro.cliente">
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">{{cliente.nome}} ({{cliente.email}})</mat-option>
+        </mat-select>
+    </mat-form-field>
 
     <mat-toolbar class="form-buttons">
         <mat-toolbar-row>

@@ -1,1 +1,41 @@
-<p>peca-form works!</p>
+ <h1>{{ title }}</h1>
+ <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+     <mat-form-field>
+         <mat-label>Nome da peca</mat-label>
+         <input name="nome" [(ngModel)]="peca.nome" matInput required placeholder="Identifique o nome da peça(Ex: )">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Facricante</mat-label>
+         <input name="fabricante" [(ngModel)]="peca.fabricante" matInput required placeholder="Identifique o nome da fabricante da peça (Ex: BMW)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>RG do cliente</mat-label>
+         <input name="valor" [(ngModel)]="peca.valor" matInput required placeholder="Identifique o valor da peça (250,00">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Endereco do cliente</mat-label>
+         <input name="marca_carro" [(ngModel)]="peca.marca_carro" matInput required placeholder="Identifique a marca do carro que sera colocado a peça (Ex: Rua Abilio Coltinho N.640 São Joaquim)">
+     </mat-form-field>
+
+     <mat-form-field>
+         <mat-label>Descricao da peça </mat-label>
+         <textarea matInput></textarea name="descricao" [(ngModel)]="peca.descricao" matInput required 
+         placeholder="(Ex: Tamanho rede radiador: 640x82x64  Material: Alumínio, Plástico
+            Equipamento do veículo: para veículos com/sem ar condicionado
+            Tipo de caixa de velocidades: Caixa de velocidades manual )">
+     </mat-form-field>
+
+     <mat-toolbar class="form-buttons">
+         <mat-toolbar-row>
+             <button mat-raised-button type="submit" color="accent">
+                 Salvar
+             </button>
+             <button mat-raised-button type="button" (click)="voltar(f)">
+                 Voltar
+             </button>
+         </mat-toolbar-row>
+     </mat-toolbar>
+ </form>
