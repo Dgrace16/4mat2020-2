@@ -2,33 +2,32 @@
 
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
-	<mat-form-field>
-		<mat-label>Horario inicial</mat-label>
-		<input name="horario_inicial" [(ngModel)]="manutencao.horario_inicial" matInput required placeholder="Informe o horario de inicio da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
+    <mat-form-field>
+        <mat-label>Horario inicial</mat-label>
+        <input name="horario_inicial" [(ngModel)]="manutencao.horario_inicial" matInput required placeholder="Informe o horario de inicio da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
     </mat-form-field>
 
-	<mat-form-field>
-		<mat-label>Horario termino</mat-label>
-		<input name="horario_termino" [(ngModel)]="manutencao.horario_termino" matInput required placeholder="Informe o horario de termino da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
+    <mat-form-field>
+        <mat-label>Horario termino</mat-label>
+        <input name="horario_termino" [(ngModel)]="manutencao.horario_termino" matInput required placeholder="Informe o horario de termino da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
     </mat-form-field>
 
-	<mat-form-field>
-				<mat-label>Funcionario</mat-label>
-		</mat-form-field>
-		<mat-select name="manutencao" [(ngModel)]="servico.manutencao">
-		<mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario._id">
-			{{funcionario.nome}} {{funcionario.funcao}}</mat-option>
-		</mat-select>
-	</mat-form-field>
+    <mat-form-field>
+        <mat-label>Funcionario</mat-label>
+        <mat-select name="manutencao" [(ngModel)]="manutencao.funcionario">
+            <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario._id">
+                {{funcionario.nome}} {{funcionario.funcao}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 
-		<mat-toolbar class="form-buttons">
-			<mat-toolbar-row>
-				<button mat-raised-button type="submit" color="accent">
+    <mat-toolbar class="form-buttons">
+        <mat-toolbar-row>
+            <button mat-raised-button type="submit" color="accent">
                 Salvar
             </button>
-				<button mat-raised-button type="button" (click)="voltar(f)">
+            <button mat-raised-button type="button" (click)="voltar(f)">
                 Voltar
             </button>
-			</mat-toolbar-row>
-		</mat-toolbar>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </form>

@@ -1,5 +1,7 @@
  <h1>{{ title }}</h1>
+
  <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
      <mat-form-field>
          <mat-label>Nome da peca</mat-label>
          <input name="nome" [(ngModel)]="peca.nome" matInput required placeholder="Identifique o nome da peça(Ex: )">
