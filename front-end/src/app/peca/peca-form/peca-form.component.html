@@ -4,7 +4,7 @@
 
      <mat-form-field>
          <mat-label>Nome da peca</mat-label>
-         <input name="nome" [(ngModel)]="peca.nome" matInput required placeholder="Identifique o nome da peça(Ex: )">
+         <input name="nome" [(ngModel)]="peca.nome" matInput required placeholder="Identifique o nome da peça(Ex: Radiador)">
      </mat-form-field>
 
      <mat-form-field>
@@ -13,21 +13,20 @@
      </mat-form-field>
 
      <mat-form-field>
-         <mat-label>RG do cliente</mat-label>
-         <input name="valor" [(ngModel)]="peca.valor" matInput required placeholder="Identifique o valor da peça (250,00">
+         <mat-label>Valor</mat-label>
+         <input name="valor" [(ngModel)]="peca.valor" matInput required placeholder="Identifique o valor da peça (250,00)">
      </mat-form-field>
 
      <mat-form-field>
-         <mat-label>Endereco do cliente</mat-label>
-         <input name="marca_carro" [(ngModel)]="peca.marca_carro" matInput required placeholder="Identifique a marca do carro que sera colocado a peça (Ex: Rua Abilio Coltinho N.640 São Joaquim)">
+         <mat-label>Marca do carro q</mat-label>
+         <input name="marca_carro" [(ngModel)]="peca.marca_carro" matInput required placeholder="Identifique a marca do carro que sera colocado a peça (Ex: Toyota, Volkswagen)">
      </mat-form-field>
 
      <mat-form-field>
-         <mat-label>Descricao da peça </mat-label>
-         <textarea matInput></textarea name="descricao" [(ngModel)]="peca.descricao" matInput required 
-         placeholder="(Ex: Tamanho rede radiador: 640x82x64  Material: Alumínio, Plástico
-            Equipamento do veículo: para veículos com/sem ar condicionado
-            Tipo de caixa de velocidades: Caixa de velocidades manual )">
+         <mat-label>Descricao da peça</mat-label>
+         <textarea matInput name="descricao" [(ngModel)]="peca.descricao" matInput required placeholder="(Ex: Tamanho rede radiador: 640x82x64  Material: Alumínio, Plástico 
+           Equipamento do veículo: para veículos com/sem ar condicionado
+           Tipo de caixa de velocidades: Caixa de velocidades manual )"></textarea>
      </mat-form-field>
 
      <mat-toolbar class="form-buttons">

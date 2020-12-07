@@ -1,10 +1,10 @@
-
-import { ActivatedRoute } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { PecaService } from '../peca.service';
+
 
 @Component({
   selector: 'app-peca-form',
@@ -13,15 +13,16 @@ import { PecaService } from '../peca.service';
 })
 export class PecaFormComponent implements OnInit {
 
-    title : string = 'Nova peça'
+
+    title : string = 'Nova peca'
 
     peca: any = {} //Objeto vazio, nome da entidade no SINGULAR
 
   constructor(
-    private pecaSrv: PecaService,
-    private snackBar: MatSnackBar,
-    private location: Location,
-    private actRoute: ActivatedRoute
+        private pecaSrv: PecaService,
+        private snackBar: MatSnackBar,
+        private location: Location,
+        private actRoute: ActivatedRoute
   ) { }
 
   async ngOnInit() {
@@ -31,7 +32,7 @@ export class PecaFormComponent implements OnInit {
         // 1) Trazer o registro do back-end para edição
         this.peca = await this.pecaSrv.obterUm(this.actRoute.snapshot.params['id'])
         // 2) Mudar o título da página
-        this.title = 'Editando peça'
+        this.title = 'Editando  peca'
       }
       catch(erro) {
         console.log(erro)
@@ -39,6 +40,7 @@ export class PecaFormComponent implements OnInit {
           'Que pena! Alguem vacilo!', { duration: 5000 })
       }
     }
+    // carregar as listagens das entidades relacionadas
    }
 
     async salvar(form : NgForm) {
