@@ -51,12 +51,13 @@ import { PecaFormComponent } from './peca/peca-form/peca-form.component';
     FuncionarioListComponent,
     ManutencaoListComponent,
     PecaListComponent,
+    PecaFormComponent,
     ServicoListComponent,
     ServicoFormComponent,
     ClienteFormComponent,
     FuncionarioFormComponent,
-    ManutencaoFormComponent,
-    PecaFormComponent
+    ManutencaoFormComponent
+    
   ],
   imports: [
     BrowserModule,

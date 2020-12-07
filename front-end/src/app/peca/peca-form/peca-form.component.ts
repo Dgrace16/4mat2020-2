@@ -1,9 +1,10 @@
-import { PecaService } from './../peca.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { PecaService } from '../peca.service';
 
 @Component({
   selector: 'app-peca-form',
