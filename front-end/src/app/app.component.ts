@@ -13,5 +13,6 @@ import { Component } from '@angular/core';
     styles: []
 })
 export class AppComponent {
-    title = 'OFICINA PANDO';
+    title = 'Oficininha';
+    home = "https://4200-b0d6d452-7165-42f4-80df-294417d48e14.ws-us03.gitpod.io";
 }
