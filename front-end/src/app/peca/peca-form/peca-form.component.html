@@ -3,7 +3,7 @@
  <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
      <mat-form-field>
-         <mat-label>Nome da peca</mat-label>
+         <mat-label>Nome da peça</mat-label>
          <input name="nome" [(ngModel)]="peca.nome" matInput required placeholder="Identifique o nome da peça(Ex: Radiador)">
      </mat-form-field>
 
@@ -23,7 +23,7 @@
      </mat-form-field>
 
      <mat-form-field>
-         <mat-label>Descricao da peça</mat-label>
+         <mat-label>Descrição da peça</mat-label>
          <textarea matInput name="descricao" [(ngModel)]="peca.descricao" matInput required placeholder="(Ex: Tamanho rede radiador: 640x82x64  Material: Alumínio, Plástico 
            Equipamento do veículo: para veículos com/sem ar condicionado
            Tipo de caixa de velocidades: Caixa de velocidades manual )"></textarea>
