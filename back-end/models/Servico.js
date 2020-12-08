@@ -15,8 +15,7 @@ const esquema = mongoose.Schema({ // Schema é um esquema
     peca: {
         type: mongoose.ObjectId,
         ref: 'Peca', // para puxar peca do mongoose
-        default: "Somente orçamento",
-        required: false // atributo nao obrigatorio
+        required: true // atributo nao obrigatorio
     }
 
 

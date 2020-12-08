@@ -13,13 +13,13 @@
     <!-- carro Coluna -->
     <ng-container matColumnDef="carro">
         <th mat-header-cell *matHeaderCellDef> carro </th>
-        <td mat-cell *matCellDef="let servico"> {{servico.carro.placa}} </td>
+        <td mat-cell *matCellDef="let servico"> {{servico.carro?.placa}}({{servico.carro?.marca}}) </td>
     </ng-container>
 
     <!-- manutencao Coluna -->
     <ng-container matColumnDef="manutencao">
-        <th mat-header-cell *matHeaderCellDef> Manutencao </th>
-        <td mat-cell *matCellDef="let servico"> {{servico.manutencao?.horario_inicial | date : 'dd/MM/yyyy'}} &mdash; {{servico.manutencao?.horario_termino | date : 'dd/MM/yyyy'}} </td>
+        <th mat-header-cell *matHeaderCellDef> Manutenção </th>
+        <td mat-cell *matCellDef="let servico"> {{servico.manutencao?.horario_inicial}} &mdash; {{servico.manutencao?.horario_termino}} </td>
     </ng-container>
 
     <!-- peca Coluna -->

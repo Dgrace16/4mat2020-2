@@ -54,9 +54,9 @@ controller.listar = async (req, res) => {
     // async e await SEMPRE estao juntas, siginifica que é assíncrona
     try {
         let dados = await Servico.find()
-            .populate("carro", "placa")
-            .populate("peca", "nome")
-            .populate("peca", "valor")
+            .populate("carro")
+            .populate("mantencao")
+            .populate("peca")
         res.send(dados)
         // Ele retorna res.status(200) : OK
 

@@ -17,13 +17,13 @@ export class FuncionarioFormComponent implements OnInit {
     funcionario: any = {} //Objeto vazio, nome da entidade no SINGULAR
 
     funcoes: any = [
-        { valor: 'alinhador', descr: 'alinhador' },
-        { valor: 'eletricista', descr: 'eletricista' },
-        { valor: 'funilaria', descr: 'funilaria' },
-        { valor: 'mecanico', descr: 'mecanico' },
-        { valor: 'pintura', descr: 'pintura' },
-        { valor: 'retificador', descr: 'retificador' },
-        { valor: 'tapeceiro', descr: 'tapeceiro' }
+        { val: 'alinhador', descr: 'alinhador' },
+        { val: 'eletricista', descr: 'eletricista' },
+        { val: 'funilaria', descr: 'funilaria' },
+        { val: 'mecanico', descr: 'mecanico' },
+        { val: 'pintura', descr: 'pintura' },
+        { val: 'retificador', descr: 'retificador' },
+        { val: 'tapeceiro', descr: 'tapeceiro' }
     ]
 
     constructor(

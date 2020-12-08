@@ -36,7 +36,7 @@
 
      <mat-form-field>
          <mat-label>função/funções</mat-label>
-         <mat-select name="funcao" [(ngModel)]="funcionario.funcao" multiple>
+         <mat-select name="funcao" [(ngModel)]="funcionario.funcao" required multiple>
              <mat-option *ngFor="let funcao of funcoes" [value]="funcao.val">
                  {{funcao.descr}}
              </mat-option>

@@ -28,11 +28,12 @@ const esquema = mongoose.Schema({ // Schema é um esquema
         type: String, // tipo String e sem limitação
         required: true // atibuto obrigatorio
     },
-    funcao: { // função que o Mecanico atua
+    funcao: [{ // função que o Mecanico atua
         type: String, // tipo String e sem limitação
-        enum: ['alinhador', 'eletricista', 'funilaria', 'mecanico', 'pintura', 'retificador', 'tapeceiro'], // Conjunto de valores validos
-        required: true // atibuto obrigatorio
-    },
+        required: true, // atibuto obrigatorio
+        enum: ['alinhador', 'eletricista', 'funilaria', 'mecanico', 'pintura', 'retificador', 'tapeceiro'] // Conjunto de valores validos
+
+    }],
     email: {
         type: String, // tipo String e sem limitação 
         index: {
