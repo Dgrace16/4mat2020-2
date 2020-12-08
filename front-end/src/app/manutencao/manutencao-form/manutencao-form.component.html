@@ -3,17 +3,17 @@
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
     <mat-form-field>
-        <mat-label>Horario inicial</mat-label>
+        <mat-label>Horário inicial</mat-label>
         <input name="horario_inicial" [(ngModel)]="manutencao.horario_inicial" matInput required placeholder="Informe o horario de inicio da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Horario termino</mat-label>
+        <mat-label>Horário término</mat-label>
         <input name="horario_termino" [(ngModel)]="manutencao.horario_termino" matInput required placeholder="Informe o horario de termino da manutenção (Ex: 20:30)" mask="00:00" [dropSpecialCharacters]="false">
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Funcionario</mat-label>
+        <mat-label>Funcionário</mat-label>
         <mat-select name="manutencao" [(ngModel)]="manutencao.funcionario">
             <mat-option *ngFor="let funcionario of funcionarios" [value]="funcionario._id">
                 {{funcionario.nome}} {{funcionario.funcao}}</mat-option>

@@ -10,14 +10,14 @@
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>manutencao</mat-label>
+        <mat-label>Manutenção</mat-label>
         <mat-select name="manutencao" [(ngModel)]="servico.manutencao">
             <mat-option *ngFor="let manutencao of manutencoes" [value]="manutencao._id">{{manutencao.horario_inicial}} {{manutencao.horario_termino}}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>peca</mat-label>
+        <mat-label>Peça</mat-label>
         <mat-select name="manutencao" [(ngModel)]="servico.peca">
             <mat-option *ngFor="let peca of pecas" [value]="peca._id">{{peca.nome}} ({{peca.valor}})</mat-option>
         </mat-select>
